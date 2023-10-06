@@ -1,0 +1,152 @@
+#chatBar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f6f1e8;
+  /* border: 1px solid black; */
+
+  #header {
+    min-height: 60px;
+    /* width: 100%; */
+    background-color: #f0f2f5;
+    /* border: 1px solid red; */
+    box-shadow: 1px 0px 2px rgb(187, 184, 184);
+    display: flex;
+    justify-content: space-between;
+
+    .dpSection {
+      /* flex-basis: 50px; */
+      /* border: 1px solid red; */
+      display: flex;
+      flex-direction: row;
+      margin-left: 20px;
+      .dp {
+        align-self: center;
+        justify-self: center;
+        margin-top: 2px;
+        img {
+          border-radius: 15px;
+          width: 35px;
+          cursor: pointer;
+        }
+      }
+      .name {
+        align-self: center;
+        justify-self: center;
+        font-weight: 600;
+        margin-left: 15px;
+      }
+    }
+
+    .actionSection {
+      /* flex-grow: 1; */
+      /* border: 1px solid black; */
+      width: 60px;
+      margin-right: 35px;
+      cursor: pointer;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      img {
+        width: 20px;
+        height: 20px;
+        align-self: center;
+        justify-self: center;
+        border-radius: 10px;
+        opacity: 95%;
+      }
+    }
+  }
+
+  #body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 15px 40px;
+    height: 10px;
+
+    overflow: scroll;
+
+    .message {
+      color: rgb(51, 51, 51);
+      display: flex;
+
+      .messageContent {
+        margin-top: 10px;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 8px;
+
+        .time {
+          text-align: right;
+          margin-top: 5px;
+          font-size: 10px;
+          color: rgb(129, 129, 129);
+        }
+      }
+
+      &.me {
+        align-self: end;
+        .messageContent {
+          background-color: #ecfdce;
+        }
+      }
+    }
+  }
+
+  #footer {
+    min-height: 60px;
+    bottom: 6%;
+    background-color: #f0f2f5;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0px -0.5px 1px rgb(224, 224, 224);
+
+    #micIcon {
+      flex-basis: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 18px;
+        opacity: 85%;
+        cursor: pointer;
+      }
+    }
+
+    #smileyIcon {
+      flex-basis: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 22px;
+        border-radius: 10px;
+        opacity: 85%;
+        cursor: pointer;
+      }
+    }
+
+    #textArea {
+      flex-grow: 1;
+      width: 10px;
+      display: flex;
+      align-items: center;
+
+      textarea {
+        border: none;
+        height: 39px;
+        width: 100%;
+        align-self: center;
+        justify-self: center;
+        border-radius: 8px;
+        resize: none;
+        outline: none;
+        padding: 6px 10px 6px 10px;
+      }
+    }
+  }
+}

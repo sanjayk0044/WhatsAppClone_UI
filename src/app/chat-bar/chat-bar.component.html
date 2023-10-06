@@ -1,0 +1,44 @@
+<div id="chatBar">
+
+    <div id="header">
+        <div class="dpSection">
+            <div class="dp">
+                <img src="../../assets/image/unKnownDp.webp" alt="">
+            </div>
+            <div class="name">{{conversion.name}}</div>
+        </div>
+
+        <div class="actionSection">
+            <img src="../../assets/image/searchIcon.png" alt="">
+            <img src="../../assets/image/verticalIcon.png" alt="">
+        </div>
+    </div>
+
+    <div id="body">
+        <div class="message" [ngClass]="{me: message.me}" 
+            *ngFor="let message of conversion.message">
+
+            <div class="messageContent">
+                {{message.body}}
+                <div class="time">
+                    {{message.time}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div id="smileyIcon">
+            <img src="../../assets/image/emojiIcon.png" alt="">
+        </div>
+
+        <div id="textArea" (keyup.enter)="sendMessage($event)">
+            <textarea id="textField" cols="60" rows="1.5"></textarea>
+        </div>
+        
+        <div id="micIcon">
+            <img src="../../assets/image/micIcon.png" alt="">
+        </div>
+    </div>
+
+</div>

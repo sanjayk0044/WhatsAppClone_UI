@@ -1,0 +1,48 @@
+<div id="sideBar">
+
+    <div id="row1">
+        
+        <div id="sideBarHeader">
+            <div class="profilePic">
+                <img src="../../assets/image/profilePic.png" alt="">
+            </div>
+    
+            <div class="actionItem">
+                <img src="../../assets/image/statusIcon.png" alt="">
+                <img src="../../assets/image/messageIcon.webp" alt="">
+                <img src="../../assets/image/verticalIcon.png" alt="">
+            </div>
+        </div>
+
+        <div id="searchBox">
+            <img src="../../assets/image/searchIcon.png" alt="" id="searchImage">
+            <input type="text" id="searchBar" placeholder="Search or start new chat">
+        </div>
+
+    </div>
+    
+    <div id="sideBarContent">
+        <div class="conversion" 
+            *ngFor="let chat of recentChat" 
+            (click)="recentChatClicked.emit(chat)">
+            
+            <div class="conversionPic">
+                <img src="../../assets/image/unKnownDp.webp" alt="">
+            </div>
+
+            <div class="conversionDetails">
+                <div class="detailsUpper">
+                    <div class="detailsName" >{{chat.name}}</div>
+                    <div class="detailsTime">{{chat.time}}</div>
+                </div>
+
+                <div class="detailsLower">
+                    <img *ngIf="chat.read" src="../../assets/image/doubleBlueTick.webp" alt="">
+                    <img *ngIf="!chat.read" src="../../assets/image/singleTick.png" alt="">
+                    {{chat.lastMessage}}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
